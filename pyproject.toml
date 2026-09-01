@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scrubline"
+version = "0.1.0"
+description = "Deterministic, bounded redaction of secrets and PII from log lines"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Neander" }]
+keywords = ["redaction", "logging", "pii", "secrets", "privacy", "detect-secrets"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Security",
+    "Topic :: System :: Logging",
+    "Typing :: Typed",
+]
+dependencies = [
+    "detect-secrets>=1.5.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+    "mypy>=1.11.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/neanderhq/scrubline"
+Source = "https://github.com/neanderhq/scrubline"
+Issues = "https://github.com/neanderhq/scrubline/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+scrubline = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+
+[tool.mypy]
+python_version = "3.10"
+strict = true

@@ -1,0 +1,94 @@
+{
+  "positive_cases": {
+    "api_key": {
+      "templates": ["api_key={needle}", "provider-key: {needle}"],
+      "expected": ["api_key=[REDACTED:API_KEY]", "provider-key: [REDACTED:API_KEY]"],
+      "fingerprints": ["115e054200780a42041dfea224d32f3a773684183ad41c61d3f9b022b661c2b0", "fbe4089d2c5cb560ad76fb74b689a49390c658c0a9f0066086ed2fff4342f032"]
+    },
+    "token": {
+      "templates": ["Bearer {needle}", "token={needle}"],
+      "expected": ["[REDACTED:TOKEN]", "token=[REDACTED:TOKEN]"],
+      "fingerprints": ["2ec4ad6e7c6deeb84b384c7edde088cb7ed2ab7c74871da6e689cf32b3fec32b", "5d4547b4781cb172be8655cf75ab4bcc3e620e27ed4545447754f26dd1de2a0f"]
+    },
+    "credential": {
+      "templates": ["Basic {needle}", "authorization: basic {needle}"],
+      "expected": ["[REDACTED:CREDENTIAL]", "authorization: [REDACTED:CREDENTIAL]"],
+      "fingerprints": ["6c3b3327699ce0e50a333091a077057817d8f62fd3a77043e1d20adeb94102ca", "53bbc45ea1556cc05e0ccc4b2c93d15b137e80b48e7aa099e304ab7f948e6ec6"]
+    },
+    "cookie": {
+      "templates": ["Cookie: sid={needle}", "set-cookie: session={needle}; HttpOnly"],
+      "expected": ["Cookie: [REDACTED:COOKIE]", "set-cookie: [REDACTED:COOKIE]"],
+      "fingerprints": ["8be1d38c4a507a240c989f2a64037b4a7598758bfd883e02fe1720cc642fe134", "ea8bcdbdf8c2738b736c180844a28ee53be249bf6600a1c93cc5cd044767a51d"]
+    },
+    "private_key": {
+      "templates": ["{needle}", "key follows\n{needle}"],
+      "expected": ["[REDACTED:PRIVATE_KEY]", "key follows\n[REDACTED:PRIVATE_KEY]"],
+      "fingerprints": ["c5dd71956c7cff8caf77ecae78f6768cc87f986776b12ed5e016cc0de78c828d", "ab4c4be8d16959117f0f0674c422a4d86e94bb2c693b8c1d88190a5890bf24d1"]
+    },
+    "dsn": {
+      "templates": ["dsn={needle}", "connect {needle}"],
+      "expected": ["dsn=[REDACTED:DSN]", "connect [REDACTED:DSN]"],
+      "fingerprints": ["4e5014f39202314b52afeda875f1ec42dc2265bf785ba5be2b5e9e971305df51", "d1b28f4221e6dc7da7887deb1a6a277973a1a78f0e5c1ec57b47f34a471acbe4"]
+    },
+    "secret": {
+      "templates": ["secret={needle}", "client_secret: {needle}"],
+      "expected": ["secret=[REDACTED:SECRET]", "client_secret: [REDACTED:SECRET]"],
+      "fingerprints": ["c6896df96cfb571b414074dae722189c6c2a3597dd6b93bfa9cbcd2dd08d03c8", "4b9fae6d4d0d0ea0e37844a3ad62aa125e86c6e5a843d29044be7830d31fcc5f"]
+    },
+    "environment": {
+      "templates": ["DATABASE_PASSWORD={needle}", "env TOKEN={needle}"],
+      "expected": ["DATABASE_PASSWORD=[REDACTED:ENVIRONMENT]", "env TOKEN=[REDACTED:ENVIRONMENT]"],
+      "fingerprints": ["5ba11b255d10a3c20c2eba2bacd58ee30de4f29a1c85a1c364c9205d2008a59d", "3e5d83c84c3bf2e6ab926493ecc22a1ac3269c11a699157e9f7e044e18553764"]
+    },
+    "email": {
+      "templates": ["contact {needle}", "email={needle}"],
+      "expected": ["contact [REDACTED:EMAIL]", "email=[REDACTED:EMAIL]"],
+      "fingerprints": ["f479347c66da55cea0cdc89518dd078b5cf164bae79c09429a6a29f8abaed8ff", "344f790cce98c66fbee22b5ba65e3aa02b440c2b21ca20987a35feffcec3a358"]
+    },
+    "phone": {
+      "templates": ["call {needle}", "phone={needle}"],
+      "expected": ["call [REDACTED:PHONE]", "phone=[REDACTED:PHONE]"],
+      "fingerprints": ["b9a0946cf4daed763b4d17f223172aa4065a7482e73271963771c4340a653446", "df873604ce21f7df33d89d8e8dd57880c3810ee6246749014206bd8fabb42ea4"]
+    },
+    "ip_address": {
+      "templates": ["remote {needle}", "ip={needle}"],
+      "expected": ["remote [REDACTED:IP_ADDRESS]", "ip=[REDACTED:IP_ADDRESS]"],
+      "fingerprints": ["66eb31a96bbc03f45c1d9cf9fbd1ccf1342fcfa4dd922c93f9ae4a68d7eab0af", "e2947d2d88dfd65d5743c289a2ca526225cd2dba0db0720bc3692754df9af505"]
+    },
+    "mac_address": {
+      "templates": ["adapter {needle}", "mac={needle}"],
+      "expected": ["adapter [REDACTED:MAC_ADDRESS]", "mac=[REDACTED:MAC_ADDRESS]"],
+      "fingerprints": ["e9bd6ab4ee85c9ba5e99efdf77875f9fdba40dd43387ee8eabcaa802a7b279af", "9bb31e8f81afb5112cee6bfc093da3ca674fdbe80bc5fd9e0db10e26b64a0df3"]
+    },
+    "username": {
+      "templates": ["user={needle}", "username: {needle}"],
+      "expected": ["user=[REDACTED:USERNAME]", "username: [REDACTED:USERNAME]"],
+      "fingerprints": ["86a355033625fcd96f4cfe2c99444b85096f56b8464b695563dad947faa14f93", "36b906fdba08de62d64a88e1cdc2383a58c5962adde5484aa326b9648f708b6b"]
+    },
+    "hostname": {
+      "templates": ["host={needle}", "hostname: {needle}"],
+      "expected": ["host=[REDACTED:HOSTNAME]", "hostname: [REDACTED:HOSTNAME]"],
+      "fingerprints": ["be1d5308dcef3fd9812dd52bb2517021166addecf3114304b08cf53737be60f8", "879189f031e23b900207ea63e2116733e94f560fe03b67e87b3f651ff914c811"]
+    },
+    "path": {
+      "templates": ["opened {needle}", "path={needle}"],
+      "expected": ["opened [REDACTED:PATH]", "path=[REDACTED:PATH]"],
+      "fingerprints": ["f8053645230ea04d34f9067c1dbe3544ecf080bb825e1c8cba82c52be62c904b", "02f7b83d1a9f214684d541ec72c888863c797e4b6e6638491c34626d2051bb5e"]
+    },
+    "url": {
+      "templates": ["request {needle}", "url={needle}"],
+      "expected": ["request [REDACTED:URL]", "url=[REDACTED:URL]"],
+      "fingerprints": ["4b551ac2b735f984124318b7d75e72e99c68a7684deebfb8d4902d25dd7f9833", "1704fdac2ad88b662e293fde6df8fd8aa66b910e7ef3de85138c32abbcc2d0c3"]
+    }
+  },
+  "safe_near_misses": [
+    "123e4567-e89b-42d3-a456-426614174000",
+    "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "version 1.2.3",
+    "VERSION=1.2.3",
+    "2026-08-26T12:34:56.789Z",
+    "localhost 127.0.0.1 ::1 10.0.0.1 169.254.1.2 192.0.2.1 2001:db8::1",
+    "src/main.py:42",
+    "[REDACTED:API_KEY] [REDACTED:TOKEN] [REDACTED:CREDENTIAL] [REDACTED:COOKIE] [REDACTED:PRIVATE_KEY] [REDACTED:DSN] [REDACTED:SECRET] [REDACTED:ENVIRONMENT] [REDACTED:EMAIL] [REDACTED:PHONE] [REDACTED:IP_ADDRESS] [REDACTED:MAC_ADDRESS] [REDACTED:USERNAME] [REDACTED:HOSTNAME] [REDACTED:PATH] [REDACTED:URL]"
+  ]
+}
